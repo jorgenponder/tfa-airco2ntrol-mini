@@ -1,21 +1,3 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-# Copyright (C) 2021  Mathieu Schopfer
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import argparse
 from datetime import datetime
 import os
@@ -23,10 +5,11 @@ import os.path
 from matplotlib import pyplot as plt
 import numpy as np
 import airco2ntrol_mini as aco2m
-
+plt.tight_layout(pad=1)
 _co2_line = None
 _last_point = None
-_plot_range = 1800  # Plot range in seconds
+#_plot_range = 1800  # Plot range in seconds
+_plot_range = 86400  # Plot range in seconds
 _warning_threshold = 600
 _danger_threshold = 800
 
@@ -59,11 +42,14 @@ def update_plot(t, co2, _):
 
     _co2_line.set_xdata(timestamps)
     _co2_line.set_ydata(co2s)
+
     _last_point.set_xdata([t])
     _last_point.set_ydata([co2])
 
     fig = plt.gcf()
+    fig.set_size_inches(20, 6)
     fig.canvas.draw()
+    fig.savefig('co2.png')
     fig.canvas.flush_events()
 
 
@@ -104,7 +90,7 @@ if __name__ == '__main__':
 
             # Plotting
             aco2m.register_watcher(update_plot)
-            plt.ion()  # Activate interactive plotting
+#            plt.ion()  # Activate interactive plotting
             _co2_line, = plt.plot([], [], linewidth=2, color='black')  # Init line
             _last_point, = plt.plot([], [], marker='o', color='black')  # Init line
 
@@ -119,6 +105,7 @@ if __name__ == '__main__':
             plt.grid(color='whitesmoke', linestyle=':', linewidth=1)
             plt.xlabel('Time')
             plt.ylabel('CO2 [ppm]')
-            plt.title(f'CO2 concentration over the last {_plot_range/60:.0f} min')
+#            plt.title(f'CO2 concentration over {_plot_range/60:.0f} min')
+            plt.title(f'CO2 concentration over the last {_plot_range/3600:.0f} hours')
 
-            aco2m.watch()
+            aco2m.watch(delay=30)
