@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2021  Mathieu Schopfer
+# Based on https://github.com/MathieuSchopfer/tfa-airco2ntrol-mini by Mathieu Schopfer
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
