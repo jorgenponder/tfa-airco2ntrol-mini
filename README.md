@@ -5,8 +5,9 @@ The differences are that this version writes the diagram to file instead of show
 ## Added file
 publish.py has been added, for publishing the diagram to a Mastodon server, for example at https://botsin.space
 
-## Example install with virtualenv on Debian and Ubuntu:
+## Example install with virtualenv and running on Debian and Ubuntu
 
+Example:
   mkdir co2
   cd co2
   git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
