@@ -8,14 +8,14 @@ publish.py has been added, for publishing the diagram to a Mastodon server, for 
 ## Example install with virtualenv and running on Debian and Ubuntu
 
 Example:
-  mkdir co2
-  cd co2
-  git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
-  virtualenv .
-  ./bin/pip install hidapi
-  ./bin/pip install matplotlib
-  ./bin/pip install Mastodon.py
-  ./bin/python report.py
+    mkdir co2
+    cd co2
+    git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
+    virtualenv .
+    ./bin/pip install hidapi
+    ./bin/pip install matplotlib
+    ./bin/pip install Mastodon.py
+    ./bin/python report.py
 
 Example cron job:
     36  */4 * * * cd /path/to/tfa-airco2ntrol-mini && ./bin/python publish.py 2>&1 | logger -t mastodon
