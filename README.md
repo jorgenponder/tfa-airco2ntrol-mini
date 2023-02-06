@@ -2,8 +2,24 @@
 
 The differences are that this version writes the diagram to file instead of showing it in a window, with a bigger diagram (around 2000px wide), and polls slower, around every 30 seconds.*
 
-# Added file
+## Added file
 publish.py has been added, for publishing the diagram to a Mastodon server, for example at https://botsin.space
+
+## Example install with virtualenv on Debian and Ubuntu:
+
+  mkdir co2
+  cd co2
+  git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
+  virtualenv .
+  ./bin/pip install hidapi
+  ./bin/pip install matplotlib
+  ./bin/pip install Mastodon.py
+  ./bin/python report.py
+
+Example cron job:
+    36  */4 * * * cd /path/to/tfa-airco2ntrol-mini && ./bin/python publish.py 2>&1 | logger -t mastodon
+
+Remember to change the settings in publish.py first
 
 # Original text
 
