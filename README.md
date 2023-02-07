@@ -22,6 +22,7 @@ Example install on a Raspberry Pi 3+ running Debian 11 Linux:
     ./bin/pip install hidapi
     ./bin/pip install matplotlib
     ./bin/pip install Mastodon.py
+    # run the program to create the Co2 diagram
     ./bin/python report.py
 
 Example cron job to publish to Mastodon every 4 hours:
