@@ -17,6 +17,7 @@ Example install on a Raspberry Pi 3+ running Debian 11 Linux:
     mkdir co2
     cd co2
     git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
+    cd tfa-airco2ntrol-mini
     virtualenv .
     ./bin/pip install hidapi
     ./bin/pip install matplotlib
