@@ -14,7 +14,7 @@ This will be the result: https://mas.to/@koldio/109808222410697067
 
 2. Get an account on a Mastodon server, and register an application there and save the keys for the application. Some Mastodon servers are supposed to be extra bot friendly, such as this one: https://botsin.space . But that server has a delay before getting approved. However you might still be waiting for a CO2 meter. Read the rules for the server you choose before opening an account there.
 
-3. Install the code from this repository: https://github.com/jorgenponder/tfa-airco2ntrol-mini It is a modified version of https://github.com/MathieuSchopfer/tfa-airco2ntrol-mini to provide 24 hour charts, as well as saving the diagram to disk instead of displaying it in a window. It also contains a file publish.py, that publishes to a Mastodon server very 4 hours, if you put it in a cron job that runs it every four hours.
+3. Install the code in this repository. https://github.com/jorgenponder/tfa-airco2ntrol-mini It is a modified version of https://github.com/MathieuSchopfer/tfa-airco2ntrol-mini to provide 24 hour charts, as well as saving the diagram to disk instead of displaying it in a window. It also contains a file publish.py, that publishes to a Mastodon server very 4 hours, if you put it in a cron job that runs it every four hours.
 
 4. Plug the meter into a computer with a USB cable.
 
