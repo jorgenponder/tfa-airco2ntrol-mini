@@ -12,7 +12,8 @@ publish.py has been added, for publishing the diagram to a Mastodon server, for 
 ## Example install with virtualenv and running on Debian and Ubuntu
 
 Example install on a Raspberry Pi 3+ running Debian 11 Linux:
-
+    
+    sudo apt install python3-virtualenv
     mkdir co2
     cd co2
     git clone git@github.com:jorgenponder/tfa-airco2ntrol-mini.git
